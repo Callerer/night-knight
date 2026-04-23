@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		# We use move_toward for basic acceleration/deceleration
 		velocity.x = direction * SPEED
-		animated_sprite.play("left_walk")
+		animated_sprite.play("walk")
 		animated_sprite.flip_h = direction > 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED) # Decelerate to a stop

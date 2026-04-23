@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://b5webfghpmqvj"]
+
+[ext_resource type="Script" uid="uid://hqkktewscbdi" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://cln0gtojm8b1v" path="res://assets/atlas0.png" id="2_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm37i"]
+size = Vector2(32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c2fu"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 832, 186, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo382"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 1050, 186, 210)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nshjd"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(1570, 612, 157, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpy2g"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(1410, 651, 141, 217)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ao358"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c2fu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo382")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nshjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpy2g")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1005761471]
+script = ExtResource("1_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1853368101]
+position = Vector2(216, 224)
+shape = SubResource("RectangleShape2D_hm37i")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1162911022]
+position = Vector2(112, 256)
+zoom = Vector2(2, 2)
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=1233704022]
+wait_time = 0.5
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=296881846]
+position = Vector2(216, 216)
+scale = Vector2(0.5, 0.4595238)
+sprite_frames = SubResource("SpriteFrames_ao358")
+animation = &"walk"
+frame_progress = 0.72193635
