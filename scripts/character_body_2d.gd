@@ -5,6 +5,7 @@ extends CharacterBody2D
 const SPEED = 390.0
 const JUMP_VELOCITY = -600.0
 
+@onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -24,10 +25,12 @@ func _physics_process(delta: float) -> void:
 	
 	if direction:
 		# We use move_toward for basic acceleration/deceleration
-		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED * 2.0 * delta) # Last value is acceleration
+		velocity.x = direction * SPEED
+		animated_sprite.play("left_walk")
+		animated_sprite.flip_h = direction > 0
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED * 2.0 * delta) # Decelerate to a stop
-
+		velocity.x = move_toward(velocity.x, 0, SPEED) # Decelerate to a stop
+		animated_sprite.play("idle")
 	# checking before vs after mov n slide when jumoed to start coyote timer
 	var was_on_floor = is_on_floor()
 
