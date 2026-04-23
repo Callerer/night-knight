@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var coyote_timer = $CoyoteTimer
 
-const SPEED = 300.0
+const SPEED = 390.0
 const JUMP_VELOCITY = -600.0
 
 
@@ -21,10 +21,12 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
+	
 	if direction:
-		velocity.x = direction * SPEED
+		# We use move_toward for basic acceleration/deceleration
+		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED * 2.0 * delta) # Last value is acceleration
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED * 2.0 * delta) # Decelerate to a stop
 
 	# checking before vs after mov n slide when jumoed to start coyote timer
 	var was_on_floor = is_on_floor()
