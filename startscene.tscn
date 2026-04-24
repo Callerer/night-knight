@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dlmtcog24sb00"]
+
+[ext_resource type="Script" uid="uid://4lyflq370w8s" path="res://scripts/startscene.gd" id="1_1j0nw"]
+
+[node name="startscene" type="Node" unique_id=1396239491]
+script = ExtResource("1_1j0nw")
+
+[node name="Label" type="Label" parent="." unique_id=903102006]
+offset_right = 1160.0
+offset_bottom = 640.0
+theme_override_font_sizes/font_size = 34
+text = "
+Note:
+
+       Cal hasn't played Hollow Knight or Silksong yet.
+       She thinks abt it so much that she sees the game in her dreams.
+       She believes the game is really easy.
+       Can you complete her imagined version of the game in her dream?"
+
+[node name="Button" type="Button" parent="." unique_id=1803653120]
+offset_left = 376.0
+offset_top = 448.0
+offset_right = 752.0
+offset_bottom = 552.0
+theme_override_font_sizes/font_size = 55
+text = "Vamos"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

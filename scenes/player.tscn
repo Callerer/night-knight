@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://hqkktewscbdi" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cln0gtojm8b1v" path="res://assets/atlas0.png" id="2_qhqgy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm37i"]
-size = Vector2(32, 64)
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4c2fu"]
 atlas = ExtResource("2_qhqgy")
@@ -51,8 +51,8 @@ animations = [{
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1853368101]
-position = Vector2(216, 224)
-shape = SubResource("RectangleShape2D_hm37i")
+position = Vector2(160, 240)
+shape = SubResource("CircleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1162911022]
 position = Vector2(112, 256)
@@ -63,8 +63,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=296881846]
-position = Vector2(216, 216)
-scale = Vector2(0.5, 0.4595238)
+position = Vector2(160, 232)
+scale = Vector2(0.22691083, 0.25213572)
 sprite_frames = SubResource("SpriteFrames_ao358")
-animation = &"walk"
-frame_progress = 0.72193635
+animation = &"idle"

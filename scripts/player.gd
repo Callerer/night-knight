@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @onready var coyote_timer = $CoyoteTimer
 
-const SPEED = 390.0
-const JUMP_VELOCITY = -600.0
+const SPEED = 400.0
+const JUMP_VELOCITY = -350.0
 
 @onready var animated_sprite = $AnimatedSprite2D
 
