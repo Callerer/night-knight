@@ -22,6 +22,7 @@ offset_left = 376.0
 offset_top = 448.0
 offset_right = 752.0
 offset_bottom = 552.0
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 55
 text = "Vamos"
 
