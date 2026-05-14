@@ -9,4 +9,5 @@ A simple platformer game of Hornet from the game Silksong.
 
 ## Credits
 Silksong spritesheet - by Ilves on Itch (link: https://ilves15.itch.io/hollow-knight-silksong-sprites) 
+
 Tiles asset - by AtomicRealm on Itch (link: https://atomicrealm.itch.io/industrial-tileset)
